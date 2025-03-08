@@ -119,8 +119,8 @@ void app_main(void) {
 
     xQueue = xQueueCreate(10, sizeof(sht4x_t));
     xTaskCreatePinnedToCore(task_sht4x, "task_sht4x", 2048, NULL, 5, NULL, 0);
-    xTaskCreatePinnedToCore(task_display, "task_display", 2048, NULL, 5, NULL, 1);
-    xTaskCreatePinnedToCore(motor_task, "motor_task", 2048, NULL, 5, NULL, 3);
+    xTaskCreatePinnedToCore(task_display, "task_display", 2048, NULL, 4, NULL, 1);
+    xTaskCreatePinnedToCore(motor_task, "motor_task", 3072, NULL, 6, NULL, 0);
     // xTaskCreatePinnedToCore(task_heat, "task_heat", 2048, NULL, 5, NULL, 2);
     // start_wifi();
 }
